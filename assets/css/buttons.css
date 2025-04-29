@@ -1,0 +1,11 @@
+.md-typeset .md-button.xs-button {
+    padding: .5em !important;
+}
+
+.md-typeset .md-button.centered-button {
+    text-align: center;
+    width: 25%;
+    min-width: 250px;
+    margin: 0 auto;
+    display: block !important;
+}

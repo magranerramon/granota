@@ -1,0 +1,61 @@
+/* Estil per a llistes ordenades amb numeració jeràrquica */
+
+/* Nivell 1 */
+ol {
+    list-style-type: none !important;
+    counter-reset: level1; /* Reseteja el comptador per al nivell 1 */
+    padding-left: 1rem; /* Ajusta la indentació inicial */
+    margin-left: 0;
+}
+
+ol > li {
+    counter-increment: level1; /* Incrementa el comptador del nivell 1 */
+    margin-bottom: 0.5rem;
+    content:'';
+}
+
+ol > li::before {
+    content: counter(level1) ". "; /* Mostra el número del nivell 1 */
+}
+
+/* Nivell 2 */
+ol > li > ol {
+    list-style-type: none;
+    counter-reset: level2; /* Reseteja el comptador per al nivell 2 */
+    margin-left: 1.5rem; /* Ajusta la indentació del nivell 2 */
+    padding-left: 0;
+}
+
+ol > li > ol > li {
+    counter-increment: level2; /* Incrementa el comptador del nivell 2 */
+}
+
+ol > li > ol > li::before {
+    content: counter(level1) "." counter(level2) ". "; /* Mostra el número combinat del nivell 1 i 2 */
+}
+
+/* Nivell 3 */
+ol > li > ol > li > ol {
+    list-style-type: none;
+    counter-reset: level3; /* Reseteja el comptador per al nivell 3 */
+    margin-left: 1.5rem; /* Ajusta la indentació del nivell 3 */
+    padding-left: 0;
+}
+
+ol > li > ol > li > ol > li {
+    counter-increment: level3; /* Incrementa el comptador del nivell 3 */
+}
+
+ol > li > ol > li > ol > li::before {
+    content: counter(level1) "." counter(level2) "." counter(level3) ". "; /* Mostra el número complet del nivell 1, 2 i 3 */
+}
+
+
+
+li>p {
+    display:inline;
+}
+
+::marker {
+    content:"";
+}
